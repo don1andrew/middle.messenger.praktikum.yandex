@@ -1,0 +1,8 @@
+:root {
+    --svg-profile-edit-frame: url(/resources/profile_edit_frame.svg);
+}
+.profile-edit-frame {
+    background-image: var(--svg-profile-edit-frame);
+    min-width: 677px;
+    min-height: 195px;
+}
