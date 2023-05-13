@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
-const PORT = 3500;
+const PORT = 3000;
 
 // для прохождения теста на роутинг
 app.use(({}, res, next) => {
