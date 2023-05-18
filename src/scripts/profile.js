@@ -9,6 +9,7 @@ document.getElementById('root').innerHTML = tpl({
         { label: 'LOGIN', value: 'HACKER9000' },
         { label: 'NAME', value: 'ANDREW' },
         { label: 'LASTNAME', value: 'UNIXENKO' },
+        { label: 'DISPLAY NAME', value: 'ANDREW' },
         { label: 'PHONE', value: '+ 232 23 323 22' },
     ]
 });

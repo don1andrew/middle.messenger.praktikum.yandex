@@ -3,6 +3,6 @@
 }
 .profile-edit-frame {
     background-image: var(--svg-profile-edit-frame);
-    min-width: 677px;
+    min-width: 666px;
     min-height: 195px;
 }

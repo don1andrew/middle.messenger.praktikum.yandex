@@ -33,6 +33,13 @@ document.getElementById('root').innerHTML = tpl({
             errorMessage: 'INVALID LASTNAME',
         },
         {
+            label: 'DISPLAY NAME',
+            name: 'display_name',
+            placeholder: 'DISPLAY NAME',
+            type: 'text',
+            errorMessage: 'INVALID LASTNAME',
+        },
+        {
             label: 'PHONE',
             name: 'phone',
             placeholder: 'PHONE',

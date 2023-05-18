@@ -15,7 +15,7 @@
 .profile-frame {
     background-image: var(--svg-profile-frame);
     min-width: 660px;
-    min-height: 370px;
+    min-height: 447px;
 }
 .profile-name {
     position: absolute;
