@@ -21,14 +21,14 @@ document.getElementById('root').innerHTML = tpl({
         },
         {
             label: 'NAME',
-            name: 'name',
+            name: 'first_name',
             placeholder: 'NAME',
             type: 'text',
             errorMessage: 'INVALID NAME',
         },
         {
             label: 'LAST NAME',
-            name: 'last_name',
+            name: 'second_name',
             placeholder: 'LAST NAME',
             type: 'text',
             errorMessage: 'INVALID LASTNAME',

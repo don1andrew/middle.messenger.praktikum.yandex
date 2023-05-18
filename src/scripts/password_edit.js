@@ -6,14 +6,14 @@ document.getElementById('root').innerHTML = tpl({
     fields: [
         {
             label: 'OLD PASSWORD',
-            name: 'old_password',
+            name: 'oldPassword',
             placeholder: 'OLD PASSWORD',
             type: 'password',
             errorMessage:'INVALID PASSWORD',
         },
         {
             label: 'NEW PASSWORD',
-            name: 'new_password',
+            name: 'newPassword',
             placeholder: 'NEW PASSWORD',
             type: 'password',
             errorMessage: 'PASSWORD DOESN\'T MEET THE REQUIREMENTS',

@@ -20,14 +20,14 @@ document.getElementById('root').innerHTML = tpl({
         },
         {
             label: 'NAME',
-            name: 'name',
+            name: 'first_name',
             placeholder: 'NAME',
             type: 'text',
             errorMessage: 'INVALID NAME',
         },
         {
             label: 'LAST NAME',
-            name: 'last_name',
+            name: 'second_name',
             placeholder: 'LAST NAME',
             type: 'text',
             errorMessage: 'INVALID LASTNAME',
@@ -37,7 +37,7 @@ document.getElementById('root').innerHTML = tpl({
             name: 'display_name',
             placeholder: 'DISPLAY NAME',
             type: 'text',
-            errorMessage: 'INVALID LASTNAME',
+            errorMessage: 'INVALID DISPLAY NAME',
         },
         {
             label: 'PHONE',
