@@ -113,4 +113,3 @@ window.addEventListener('load', () => {
     chatContainer.replaceChildren(unselectedChatContent);
     document.querySelector('.btn_secondary').style.display = 'none';
 })
-
