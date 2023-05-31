@@ -1,0 +1,56 @@
+<div class="chat-layout">
+    <div class="column-1">
+        <div class="chat-layout-search">
+            <input id="search" type="text" placeholder="SEARCH" autocomplete="off">
+        </div>
+        <ul class="chat-layout-chatlist">
+            {{#each chatlist}}
+                <li class="chatlist-item">
+                    <div class="chatlist-pic"></div>
+                    <div class="chatlist-username">{{username}}</div>
+                    <div class="chatlist-message">{{preview}}</div>
+                    <div class="chatlist-counter">{{counter}}</div>
+                </li>
+            {{/each}}
+            <li class="chatlist-item add-user-item">
+                <div class="chatlist-pic"></div>
+                <div class="chatlist-username">SEARCH</div>
+                <div class="chatlist-message">ADD USER</div>
+            </li>
+        </ul>
+    </div>
+    <article class="column-2">
+        <header class="chat-layout-user">
+                <div class="profile-pic">
+                    <div class="img img-user"></div>
+                </div>
+                <h1 class="profile-name">{{username}}</h1>
+        </header>
+        <div class="divider"></div>
+        <article class="chat-layout-main">
+            {{#each chat}}
+                <section class="message message-{{type}}">
+                    <div>{{message}}</div>
+                    <div class="timestamp">{{timestamp}}</div>
+                </section>
+            {{/each}}
+        </article>
+        <article class="chat-layout-textarea">
+            <div class="grow-wrap">
+                <textarea id="message" name="message" placeholder="INPUT YOUR MESSAGE HERE" rows="1" onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+            </div>
+            <div class="dropdown">
+                <button class="chat-btn">APPEND</button>
+                <div class="dropdown-content">
+                    <button class="btn">PHOTO</button>
+                    <button class="btn">FILE</button>
+                </div>
+            </div>
+            <button class="chat-btn" id="send">SEND</button>
+        </article>
+    </article>
+</div>
+<menu class="btn-container btn-container_right">
+    <a href="profile.html"><button class="btn">PROFILE</button></a>
+    <button class="btn btn_secondary">DELETE USER</button>
+</menu>

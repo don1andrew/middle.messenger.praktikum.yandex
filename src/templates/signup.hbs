@@ -1,0 +1,26 @@
+<form class="signup-frame frame centered">
+    <div class="form-content">
+        <h1 class="form-label">
+            {{title}}
+        </h1>
+        {{#each fields}}
+            <section class="form-element">
+                <div class="form-input">
+                    {{label}}
+                    <input type="{{type}}" name="{{name}}" placeholder="{{placeholder}}">
+                </div>
+                <div class="invalid-message">
+                    {{errorMessage}}
+                </div>
+            </section>
+        {{/each}}
+    </div>
+    <div class="form-btn-container">
+        <a href="index.html">
+            <button type="button" class="btn-left">LOG IN</button>
+        </a>
+        <a href="profile.html">
+            <button type="button" class="btn-right">CONFIRM</button>
+        </a>
+    </div>
+</form>

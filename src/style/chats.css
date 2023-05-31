@@ -1,0 +1,303 @@
+:root {
+    --secondary-color: #F1B537;
+
+    --chatlist-pic: url(/resources/user_pic_def.png);
+    --add-user-pic: url(/resources/add_user.png);
+}
+.chat-layout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+.column-1 {
+    flex-basis: 320px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 5px;
+}
+.column-2 {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+.chat-layout-search {
+    flex-shrink: 0;
+    padding: 10px 3px;
+    padding-top: 15px;
+    overflow: scroll;
+}
+.chat-layout-chatlist {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 10px 0;
+}
+
+.chatlist-item {
+    background-image: var(--svg-btn);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    aspect-ratio: 9 / 2;
+    margin: 2px;
+
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 4fr 35px 5px;
+    grid-template-rows:1fr 3fr 3fr 1fr;
+    align-items: center;
+
+    &:hover {
+        background-image: var(--svg-btn_hover);
+    }
+    &:active,
+    &.selected {
+        background-image: var(--svg-btn_active);
+    }
+
+}
+
+.chatlist-pic {
+    background-image: var(--chatlist-pic);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-bottom: -5%;
+    aspect-ratio: 1 / 1;
+    grid-column-start: 2;
+    grid-row: 1 / 4;
+}
+.add-user-item .chatlist-pic {
+    background-image: var(--add-user-pic);
+}
+.chatlist-username {
+    grid-row: 2;
+    grid-column-start: 3;
+    padding-left: 5%;
+}
+.chatlist-message,
+.chatlist-counter {
+    color: var(--secondary-color);
+    font-size: 11pt;
+}
+.chatlist-message {
+    grid-row: 3;
+    grid-column-start: 3;
+    padding-left: 5%;
+
+    overflow: hidden;
+    max-height: 1.5em;
+}
+.chatlist-counter {
+    grid-column-start: 4;
+    grid-row: 2 / 4;
+    justify-self: end;
+    padding-right: 5px;
+}
+
+.chat-layout-user {
+    flex-basis: 115px;
+    flex-shrink: 0;
+    position: relative;
+}
+.chat-layout-main {
+    flex-grow: 1;
+    padding: 10px;
+    gap: 17px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    overflow-y: scroll;
+}
+
+.chat-layout-textarea {
+    flex-shrink: 0;
+    padding: 10px;
+    display: flex;
+
+    overflow: visible;
+    align-items: center;
+}
+textarea {
+    cursor: var(--cursor-input) 6 12, auto;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--secondary-color);
+    font: inherit;
+    outline: none;
+    background-color: #0e0e17cc;
+
+    &::placeholder {
+        color: var(--secondary-color);
+    }    
+}
+
+input {
+    text-align: center;
+    border: 1px solid #FF3B454D;
+    float: none;
+    background-color: #0e0e17cc;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+
+    &:focus {
+        border-color: #FF3B45;
+        background: linear-gradient(#FF3B451A, #FF3B451A), linear-gradient(#0e0e17cc, #0e0e17cc);
+    }    
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    position: absolute;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+    background: linear-gradient(90deg, transparent 35%,#FF3B451A 40% 60%, transparent 65%),
+     linear-gradient(90deg, transparent 35%, #0e0e17cc 40% 60%, transparent 65%);
+}
+::-webkit-scrollbar-track:horizontal {
+    background: linear-gradient(transparent 35%,#FF3B451A 40% 60%, transparent 65%),
+    linear-gradient(transparent 35%, #0e0e17cc 40% 60%, transparent 65%);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #FF3B454D;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FF3B45;
+}
+
+.chat-greeting {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--secondary-color);
+}
+.message {
+    color: var(--secondary-color);
+    font-size: 12pt;
+    padding: 5px;
+    max-width: 90%;
+    border: 1px solid var(--secondary-color);
+    position: relative;
+    min-width: 100px;
+
+    &:first-child {
+        margin-bottom: 2px;
+    }
+}
+
+.message-ours {
+    align-self: flex-end;
+}
+.timestamp {
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    font-size: 7pt;
+    width: max-content;
+}
+.message-ours .timestamp {
+    left: 0;
+}
+
+.profile-pic {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100px;
+    height: 86px;
+}
+.img-user {
+    background-image: var(--chatlist-pic);
+    clip-path: path("M0 0H100V72L84 85H0V0Z");
+}
+
+.profile-name {
+    position: absolute;
+    bottom: 0;
+    left: 130px;
+}
+
+
+
+.divider {
+    flex-basis: 13px;
+    flex-shrink: 0;
+    background: linear-gradient(transparent 39%,#FF3B451A 40% 60%, transparent 65%);
+}
+
+.chat-btn {
+    font: inherit;
+    color: var(--secondary-color);
+    background: none;
+    outline: none;
+    border: none;
+
+    &:hover {
+        text-decoration: underline;
+    }    
+}
+
+
+.grow-wrap {
+    /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+    display: grid;
+    flex-grow: 1;
+
+    &::after {
+        /* Note the weird space! Needed to preventy jumpy behavior */
+        content: attr(data-replicated-value) " ";
+
+        /* This is how textarea text behaves */
+        white-space: pre-wrap;
+
+        /* Hidden from view, clicks, and screen readers */
+        visibility: hidden;
+        max-height: 78px;
+    }
+    & > textarea {
+        /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+        resize: none;
+
+        /* Firefox shows scrollbar on growth, you can hide like this. */
+        overflow: hidden;
+    }
+    & > textarea,
+    &::after {
+        /* Identical styling required!! */
+        border: 1px solid var(--secondary-color);
+        padding: 0.5rem;
+        font: inherit;
+
+        /* Place on top of each other */
+        grid-area: 1 / 1 / 2 / 2;
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    &:hover .dropdown-content {
+        display: block;
+    }    
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: -320%;
+    left: -50%;
+    height: 100px;
+
+    & > .btn {
+        width: 180px;
+        height: 37px;
+    }    
+}

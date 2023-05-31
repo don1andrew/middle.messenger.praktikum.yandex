@@ -1,0 +1,38 @@
+<nav class="btn-container btn-container_left">
+    <a href="chats.html"><button class="btn">BACK</button></a>
+</nav>
+<menu  class="btn-container btn-container_right">
+    <a href="profile_edit.html"><button class="btn">EDIT DATA</button></a>
+    <a href="password_edit.html"><button class="btn">EDIT PASSWORD</button></a>
+    <a href="index.html"><button class="btn btn_secondary">LOG OUT</button></a>
+</menu>
+<article class="profile-container centered">
+    <header class="content-row">
+        <div class="profile-pic profile-pic_clickable">
+            <div class="img img-user"></div>
+        </div>
+        <h1 class="profile-name">{{name}}</h1>
+    </header>
+    <article class="profile-frame frame">
+        <div class="form-content">
+            {{#each fields}}
+                <section class="form-element">
+                    <div class="form-input">
+                        {{label}}
+                        <div class="form-element-value">
+                            {{value}}
+                        </div>
+                    </div>
+                </section>
+            {{/each}}
+        </div>
+    </article>
+</article>
+<div class="pop-over">
+    <div class="error-frame frame centered">
+        SOME ERROR OCCURED
+        <div class="form-btn-container">
+            <button id="btn-ok" class="btn-right">OK</button>
+        </div>
+    </div>
+</div>

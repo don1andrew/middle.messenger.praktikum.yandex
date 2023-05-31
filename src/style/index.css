@@ -1,0 +1,242 @@
+@font-face {
+    font-family: Quantico;
+    src: url(/resources/fonts/QuanticoCyrillicMod-Regular.otf), url(/resources/fonts/quantico/Quantico-Regular.ttf);
+}
+@font-face {
+    font-family: QuanticoPassword;
+    src: url(/resources/fonts/QuanticoPassword.otf);
+}
+:root {
+    --cursor: url(/resources/cursor.svg);
+    --cursor-input: url(/resources/cursor_input.svg);
+    --accent-color: #5EF6FF;
+    --main-color: #FF3B45;
+
+    --svg-login-frame: url(/resources/login_frame.svg);
+    --svg-form-input: url(/resources/form_input.svg#default);
+    --svg-form-input_invalid: url(/resources/form_input.svg#invalid);
+
+    --svg-btn-left: url(/resources/btn_modal.svg#l-default);
+    --svg-btn-right: url(/resources/btn_modal.svg#r-default);
+    --svg-btn-left_hover: url(/resources/btn_modal.svg#l-hover);
+    --svg-btn-right_hover: url(/resources/btn_modal.svg#r-hover);
+    --svg-btn-left_active: url(/resources/btn_modal.svg#l-active);
+    --svg-btn-right_active: url(/resources/btn_modal.svg#r-active);
+
+    --svg-btn: url(/resources/btn.svg#default);
+    --svg-btn_hover: url(/resources/btn.svg#hover);
+    --svg-btn_active: url(/resources/btn.svg#active);
+
+    --svg-profile-pic-frame_default: url(/resources/profile_pic_frame.svg#default);
+    --svg-profile-pic-frame_hover_default: none;
+    --svg-profile-pic-frame_hover_hover: url(/resources/profile_pic_frame.svg#hover);
+    --svg-profile-pic-frame_hover: var(--svg-profile-pic-frame_hover_default);
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(at top, #2C0C12 10%, #05090E 100%);
+    font-family: 'Quantico', sans-serif;
+    font-size: 14pt;
+    color: var(--accent-color);
+    height: 100vh;
+}
+h1, ul {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    font-weight:normal;
+}
+body, button, a {
+    cursor: var(--cursor) 12 12, auto;
+}
+
+input {
+    cursor: var(--cursor-input) 6 12, auto;
+    text-align: end;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    color: var(--main-color);
+    background: none;
+    float: right;
+    border: none;
+}
+input[type="password"] {
+    font-family: 'QuanticoPassword';
+}
+
+::placeholder {
+    color: var(--main-color);
+    opacity: .3;
+}
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.frame {
+    padding: 20px 20px 0 55px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-frame {
+    background-image: var(--svg-login-frame);
+    min-width: 610px;
+    min-height: 195px;
+}
+
+.form-content {
+    margin: auto;
+    width: fit-content;
+}
+
+.form-label {
+    margin: 0 1px;
+}
+
+.form-element {
+    color: var(--main-color);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    background: no-repeat var(--svg-form-input);
+    background-size: contain;
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 390px;
+    height: 52px;
+    display: table-cell;
+    vertical-align: middle;
+
+    &_invalid {
+        background-image: var(--svg-form-input_invalid);
+    }
+    &_invalid + .invalid-message {
+        display: initial;
+    } 
+}
+
+.invalid-message {
+    position: absolute;
+    left: -2px;
+    width: 100%;
+    font-size: 10pt;
+    text-align: end;
+    padding: 0 1px;
+    display: none;
+}
+
+.form-btn-container {
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+.btn-left,
+.btn-right {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--accent-color);
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    width: 190px;
+    height: 40px;
+    margin-top: 5px;
+}
+.btn-left {
+    background-image: var(--svg-btn-left);
+
+    &:hover {
+        background-image: var(--svg-btn-left_hover);
+    }
+    &:active {
+        background-image: var(--svg-btn-left_active);
+    }
+}
+.btn-right {
+    background-image: var(--svg-btn-right);
+
+    &:hover {
+        background-image: var(--svg-btn-right_hover);
+    }
+    &:active {
+        background-image: var(--svg-btn-right_active);
+    }
+}
+
+.btn-container {
+    position: absolute;
+    top: 0;
+    margin: 15px 5px;
+
+    &_left {
+        left: 0;
+    }
+    &_right {
+        right: 0;
+    } 
+}
+
+.btn {
+    background-image: var(--svg-btn);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    width: 228px;
+    height: 45px;
+
+    &_secondary {
+        color: var(--main-color);
+    }
+    &:hover {
+        background-image: var(--svg-btn_hover);
+    }
+    &:active {
+        background-image: var(--svg-btn_active);
+    }
+}
+
+.profile-pic {
+    background: no-repeat var(--svg-profile-pic-frame_hover), no-repeat var(--svg-profile-pic-frame_default);
+    background-size: contain;
+    background-position: center;
+    background-origin: border-box;
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;
+    height: 170px;
+    padding: 5px;
+}
+.img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}

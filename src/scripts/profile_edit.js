@@ -1,0 +1,50 @@
+import tpl from '../templates/profile_edit.hbs';
+import '../style/index.css';
+import '../style/profile_edit.css';
+
+document.getElementById('root').innerHTML = tpl({
+    fields: [
+        {
+            label: 'EMAIL',
+            name: 'email',
+            placeholder: 'EMAIL',
+            type: 'text',
+            errorMessage: 'INVALID EMAIL',
+        },
+        {
+            label: 'LOGIN',
+            name: 'login',
+            placeholder: 'LOGIN',
+            type: 'text',
+            errorMessage: 'USER ALREADY EXISTS',
+        },
+        {
+            label: 'NAME',
+            name: 'first_name',
+            placeholder: 'NAME',
+            type: 'text',
+            errorMessage: 'INVALID NAME',
+        },
+        {
+            label: 'LAST NAME',
+            name: 'second_name',
+            placeholder: 'LAST NAME',
+            type: 'text',
+            errorMessage: 'INVALID LASTNAME',
+        },
+        {
+            label: 'DISPLAY NAME',
+            name: 'display_name',
+            placeholder: 'DISPLAY NAME',
+            type: 'text',
+            errorMessage: 'INVALID DISPLAY NAME',
+        },
+        {
+            label: 'PHONE',
+            name: 'phone',
+            placeholder: 'PHONE',
+            type: 'text',
+            errorMessage: 'INVALID PHONE',
+        },
+    ]
+});
